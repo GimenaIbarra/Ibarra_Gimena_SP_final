@@ -1,7 +1,7 @@
 import time
 from funciones_pygame.botones import *
 from funciones_pygame.funciones_logica import *
-from archivo.funciones_archivo import *
+from archivos.funciones_archivos import *
 
 def actualizar_interfaz(ventana:pg.surface, diccionario_partida:dict, diccionario_ronda: dict, fuentes: dict):
     """Funcion que se encarga de actualizar la interfaz del juego

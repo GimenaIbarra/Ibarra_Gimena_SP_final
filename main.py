@@ -1,8 +1,8 @@
 import pygame as pg
 from configs import *
-from archivo.funciones_archivo import *
+from archivos.funciones_archivos import *
 from funciones_pygame.botones import *
-from logica_juego.funciones_del_main import crear_diccionario_partida, crear_diccionario_ronda, manejar_inicio, manejar_ayuda, manejar_juego, crear_fuentes
+from logica_juego.funciones_main import crear_diccionario_partida, crear_diccionario_ronda, manejar_inicio, manejar_ayuda, manejar_juego, crear_fuentes
 from eventos.manejo_eventos import manejar_eventos
 
 pg.init()
