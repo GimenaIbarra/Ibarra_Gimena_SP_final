@@ -37,7 +37,7 @@ def manejar_eventos(ventana: pg.Surface, boton_modos: list, entrada: dict, dicci
             evento_propio(diccionario_partida, carteles, velocidad, direccion )
     return validacion
 
-#region teclado 
+#region TECLADO 
 
 
 def manejar_teclado( entrada: dict, evento: pg.event, diccionario_ronda:dict, diccionario_partida:dict, palabras:dict):
@@ -118,7 +118,7 @@ def verificar_entrada( entrada:dict ,diccionario_ronda:dict ,diccionario_partida
 
 #endregion
 
-#region mouse
+#region MOUSE
 def manejar_click_mouse(boton_modos : list, entrada :dict, evento :pg.event, diccionario_ronda:dict ,lista_botones_pistas:list, ventana: pg.surface, carteles:dict, diccionario_partida: dict):
     """Maneja el evento de click del mouse
 
@@ -271,7 +271,7 @@ def manejar_dificultad (boton_modos: list, evento:pg.event, diccionario_ronda:di
         else:
             boton_modos[i]["Presionado"] = False
 
-#region "PISTAAASS"
+#region "PISTAS"
 def manejar_pistas (lista_botones_pistas: list[pg.Surface],evento:dict, diccionario_rondas:dict,ventana:pg.surface):
     """Maneja las pistas
 

@@ -14,8 +14,8 @@ def actualizar_interfaz(ventana:pg.surface, diccionario_partida:dict, diccionari
     """    
     tiempo_actual = time.time() - diccionario_ronda["tiempo_inicio"]
     ventana.fill((255, 255, 255))
-    high_score = crear_boton(ventana,(10,ventana.get_height()-100),(70,70),"", fuentes["fuente_palabras"], "black", (164, 187, 254), imagen= r"images\high-score.png")
-    high_score_variables = crear_boton(ventana,(70,ventana.get_height()-100),(150,50), f"{diccionario_partida["mayor_puntaje"]} {diccionario_partida["mayor_nombre"]}", fuentes["fuente_palabras"], "black", (255, 255, 255))
+    high_score = crear_boton(ventana,(10,ventana.get_height()-100),(70,70),"", fuentes["fuente_palabras"], "black", (164, 187, 254), imagen= r"images\high_score.png")
+    high_score_variables = crear_boton(ventana,(90,ventana.get_height()-70),(100,50), f"{diccionario_partida["mayor_puntaje"]} {diccionario_partida["mayor_nombre"]}", fuentes["fuente_palabras"], "black", (255, 255, 255))
     icono_puntuacion = crear_boton(ventana, (10, 10), (50, 50), "", fuentes["fuente_palabras"], "white", (164, 187, 254), imagen=r"images\puntuacion-mas-alta.png")
     icono_tiempo = crear_boton(ventana, (10, 70), (50, 50), "", fuentes["fuente_palabras"], "white", "grey40", imagen=r"images\cronometro.png")
     tiempo_actualizado = crear_boton(ventana, (60, 70), (100, 50), f"{tiempo_actual:.2f}", fuentes["fuente_palabras"], "black", (255, 255, 255))
@@ -189,7 +189,7 @@ def manejar_ayuda(diccionario_partida:dict,ventana:pg.surface,carteles:dict,fuen
     """    
     SIZE_WINDOW = ventana.get_size()
     if diccionario_partida["estado_juego"] == "pantalla_ayuda":
-        carteles["explicacion"] = crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"", fuentes["fuente_palabras"], "black", (164, 187, 254))
+        carteles["explicacion"] = crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"", fuentes["fuente_palabras"], "black", (255, 255, 255))
         dibujar_boton(carteles["explicacion"])
         explicacion = """
         ¡Bienvenido a Adivina la palabra!

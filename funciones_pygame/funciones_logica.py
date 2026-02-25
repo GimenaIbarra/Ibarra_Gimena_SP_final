@@ -139,14 +139,13 @@ def verificar_gano(diccionario_partidas:dict,diccionario_rondas:dict,entrada:dic
     Returns:
         bool: Bandera que indica si el jugador gano
     """    
-    cartel_gano = crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),"",("Arial", 30),"goldenrod1","mediumturquoise", imagen= r"images\gano.png")
+    cartel_gano = crear_boton(diccionario_partidas["ventana"],(350,280),(100,100),"",("Arial", 30),"goldenrod1","mediumturquoise", imagen= r"images\clap.gif")
     if diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["palabra"] == entrada["Texto"]:
         diccionario_partidas["cantidad_palabras_acertadas"][0] += 1
         bandera = True
-        cartel_palabra =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"Acertaste el pais era {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['palabra']}",("Arial", 40),"black",(164, 187, 254))
+        cartel_palabra =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"¡Acertaste! La palabra era: {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['palabra']}",("Arial", 40),"black",(164, 187, 254))
         dibujar_boton(cartel_palabra)
         pg.display.update()
-        pg.time.wait(2000)
         dibujar_boton(cartel_gano)
         if diccionario_partidas["sonido"]:
             pg.mixer_music.load(r"sounds\gano.mp3")
@@ -166,20 +165,17 @@ def verificar_perdio (diccionario_rondas:dict,diccionario_partidas:dict,ventana:
     Returns:
         bool: Bandera que indica si el jugador perdio
     """    
-    cartel_perdio = crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),"",("Arial", 30),"Red3", "seashell4",imagen=r"images\perdio.webp")
+    cartel_perdio = crear_boton(diccionario_partidas["ventana"],(350,280),(100,100),"",("Arial", 30),"Red3", "seashell4",imagen=r"images\sad.gif")
     if diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]] == 6 and diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["palabra"] != entrada["Texto"]:
         diccionario_partidas["cantidad_palabras_falladas"][0] += 1
         bandera = True
-        cartel_palabra =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"Fallaste perro era {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['palabra']}",("Arial", 40),"black",(164, 187, 254))
+        cartel_palabra =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"¡Ups! La palabra era: {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['palabra']}",("Arial", 40),"black",(164, 187, 254))
         dibujar_boton(cartel_palabra)
         pg.display.update()
-        pg.time.wait(2000)
         dibujar_boton(cartel_perdio)
         if diccionario_partidas["sonido"]:
-
             pg.mixer_music.load(r"sounds\perdio.mp3")
             pg.mixer_music.play()
-            
     return bandera
         
 def reiniciar_ronda(bandera:bool, diccionario_rondas:dict, diccionario_partidas:dict, palabras:dict):

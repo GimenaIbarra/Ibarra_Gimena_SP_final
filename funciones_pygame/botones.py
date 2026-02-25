@@ -170,7 +170,7 @@ def comodin_categoria(ventana:pg.surface, diccionario_rondas:dict, fuente:tuple)
         diccionario_rondas (dict): Diccionario de las rondas
         fuente (tuple): Fuente de pygame
     """    
-    comodin = crear_boton(ventana, (200, 100), (400, 400), diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["categoria"], fuente, "black", "salmon")
+    comodin = crear_boton(ventana, (300, 100), (200, 200), diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["categoria"], fuente, "black", (188,245,237))
     dibujar_boton(comodin)
     pg.display.update()
     pg.time.wait(5000)
@@ -183,7 +183,7 @@ def comodin_mezclada(ventana:pg.surface,diccionario_rondas:dict,fuente:tuple):
         diccionario_rondas (dict): Diccionario de las rondas
         fuente (tuple): Fuente de pygame
     """    
-    comodin = crear_boton(ventana, (200, 100), (400, 400), diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["mezclada"], fuente, "black", "salmon")
+    comodin = crear_boton(ventana, (300, 100), (200, 200), diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["mezclada"], fuente, "black", (188,245,237))
     dibujar_boton(comodin)
     pg.display.update()
     pg.time.wait(5000)
@@ -204,7 +204,7 @@ def crear_carteles (ventana:pg.surface,SIZE_WINDOW:tuple,fuentes:tuple) -> dict:
     carteles["Activar_Sonido"] = crear_boton(ventana,(400, 100),(50,50),"",None,"black","black",imagen= r"images\sonido_on.png", accion= activar_sonido)
     carteles["Desactivar_Sonido"] = crear_boton(ventana,(400, 100),(50,50),"",None,"black","black",imagen= r"images\sonido_off.png", accion=desactivar_sonido)
     carteles["Desactivar_Sonido"]["Presionado"] = True
-    carteles["cartel_usuario"]= crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"Ingrese su nombre de usuario",("Arial", 40),"black",(157, 237, 225))
+    carteles["cartel_usuario"]= crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"Ingrese su nombre de usuario",("Arial", 40),"black",(188,245,237))
     carteles["jugar_otra_vez"] = crear_boton(ventana,(SIZE_WINDOW[0] / 2 - 150,0),(300,100),"Jugar otra vez",("Arial", 30),"black","salmon")
-    carteles["boton_volver"] = crear_boton(ventana,(SIZE_WINDOW[0] - 200 - 150,SIZE_WINDOW[1] - 100),(350,80),"Volver al inicio",("Arial", 30),"black",(107,219,211))
+    carteles["boton_volver"] = crear_boton(ventana,(SIZE_WINDOW[0] - 200 - 150,SIZE_WINDOW[1] - 100),(350,80),"Volver al inicio",("Arial", 30),"black",(188,245,237))
     return carteles
