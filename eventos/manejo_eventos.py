@@ -1,6 +1,6 @@
 import pygame as pg
 from funciones_pygame.funciones_logica import *
-from archivo.funciones_archivo import recuperar_puntuacion_mas_alta
+from archivos.funciones_archivos import recuperar_puntuacion_mas_alta
 
 
 def manejar_eventos(ventana: pg.Surface, boton_modos: list, entrada: dict, diccionario_ronda:dict, diccionario_partida:dict, palabras:dict, lista_botones_pistas:list[dict], carteles: dict[dict], MOVE_RECT_EVENT: pg.event, direccion: list[int], velocidad: list[int],evento_post: pg.event) -> bool:
