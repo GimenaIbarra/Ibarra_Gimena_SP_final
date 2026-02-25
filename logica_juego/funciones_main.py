@@ -148,11 +148,11 @@ def crear_diccionario_ronda(DIFICULTYS:list, palabras:dict, TRYS:int) -> dict:
         dict: Devuelve un diccionario con los datos de la ronda
     """    
     diccionario_ronda = {}
-    diccionario_ronda["lista_palabras"] = generar_palabras(DIFICUTYS , palabras)
-    diccionario_ronda["lista_matrices"] = generar_lista_matrices(DIFICUTYS, diccionario_ronda["lista_palabras"],TRYS)
-    diccionario_ronda["dificultad_actual"] = DIFICUTYS[0]
+    diccionario_ronda["lista_palabras"] = generar_palabras(DIFICULTYS , palabras)
+    diccionario_ronda["lista_matrices"] = generar_lista_matrices(DIFICULTYS, diccionario_ronda["lista_palabras"],TRYS)
+    diccionario_ronda["dificultad_actual"] = DIFICULTYS[0]
     diccionario_ronda["indice_actual"] = 0
-    diccionario_ronda["lista_intentos"] = [0] * len(DIFICUTYS)
+    diccionario_ronda["lista_intentos"] = [0] * len(DIFICULTYS)
     diccionario_ronda["sets_acertados"] = set()
     return diccionario_ronda
 
@@ -167,8 +167,8 @@ def manejar_inicio (diccionario_partida:dict,ventana:pg.surface,carteles:dict,fu
     """    
     if diccionario_partida["estado_juego"] == "pantalla_inicio":
         dibujar_boton(carteles["pantalla_inicio"])
-        carteles["boton_jugar"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 -150,SIZE_WINDOW[1]/2 -100),(150, 50), "Jugar", fuentes["fuente_palabras"], "black", "salmon")
-        carteles["boton_ayuda"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 + 50,SIZE_WINDOW[1]/2 -100),(150, 50), "Ayuda", fuentes["fuente_palabras"], "black", "salmon")
+        carteles["boton_jugar"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 -150,SIZE_WINDOW[1]/2 + 60),(150, 50), "Jugar", fuentes["fuente_palabras"], "black", "salmon")
+        carteles["boton_ayuda"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 + 50,SIZE_WINDOW[1]/2 + 60),(150, 50), "Ayuda", fuentes["fuente_palabras"], "black", "salmon")
         dibujar_boton(carteles["boton_jugar"]) 
         dibujar_boton(carteles["boton_ayuda"])
         if carteles["Activar_Sonido"]["Presionado"]:
@@ -222,7 +222,7 @@ def manejar_juego(diccionario_partida:dict,ventana:pg.surface,diccionario_ronda:
     """    
     if diccionario_partida["estado_juego"] == "pantalla_juego":
         actualizar_interfaz(ventana, diccionario_partida, diccionario_ronda, fuentes)
-        comprobar_estado_juego(diccionario_partida, diccionario_ronda, ventana, entrada, palabras, DIFICUTYS, carteles, lista_boton_pistas, fuentes, boton_modos)
+        comprobar_estado_juego(diccionario_partida, diccionario_ronda, ventana, entrada, palabras, DIFICULTYS, carteles, lista_boton_pistas, fuentes, boton_modos)
         
 def crear_fuentes()->dict:
     """Funcion que se encarga de crear las fuentes
@@ -231,6 +231,7 @@ def crear_fuentes()->dict:
         dict: Devuelve un diccionario con las fuentes
     """    
     fuentes = {}
+    fuentes["fuente_titulo"] = ("Arial", 40)
     fuentes["fuente_palabras"] = ("Arial", 20)
     fuentes["fuente_matriz"] = ("Arial", 30)
     fuentes["fuente_pistas"] = ("Arial", 15)

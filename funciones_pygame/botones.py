@@ -200,11 +200,11 @@ def crear_carteles (ventana:pg.surface,SIZE_WINDOW:tuple,fuentes:tuple) -> dict:
         dict: Diccionario con los carteles
     """    
     carteles = {}
-    carteles["pantalla_inicio"] = crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"Bienvenido a Palabrini", fuentes["fuente_palabras"], "black", "white", imagen= r"images\fondo_pantalla_inicio.png")
-    carteles["Activar_Sonido"] = crear_boton(ventana,(400, 250),(50,50),"",None,"black","black",imagen= r"images\sonido_on.png", accion= activar_sonido)
-    carteles["Desactivar_Sonido"] = crear_boton(ventana,(400, 250),(50,50),"",None,"black","black",imagen= r"images\sonido_off.png", accion=desactivar_sonido)
+    carteles["pantalla_inicio"] = crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"¡Bienvenido a Adivina la palabra!", fuentes["fuente_titulo"], "black", "white", imagen= r"images\fondo_pantalla_inicio.png")
+    carteles["Activar_Sonido"] = crear_boton(ventana,(400, 100),(50,50),"",None,"black","black",imagen= r"images\sonido_on.png", accion= activar_sonido)
+    carteles["Desactivar_Sonido"] = crear_boton(ventana,(400, 100),(50,50),"",None,"black","black",imagen= r"images\sonido_off.png", accion=desactivar_sonido)
     carteles["Desactivar_Sonido"]["Presionado"] = True
     carteles["cartel_usuario"]= crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"Ingrese su nombre de usuario",("Arial", 40),"black",(164, 187, 254))
     carteles["jugar_otra_vez"] = crear_boton(ventana,(SIZE_WINDOW[0] / 2 - 150,0),(300,100),"Jugar otra vez",("Arial", 30),"black","salmon")
-    carteles["boton_volver"] = crear_boton(ventana,(SIZE_WINDOW[0] - 200 - 150,SIZE_WINDOW[1] - 100),(350,80),"Volver al menu principal",("Arial", 30),"black","tomato3")
+    carteles["boton_volver"] = crear_boton(ventana,(SIZE_WINDOW[0] - 200 - 150,SIZE_WINDOW[1] - 100),(350,80),"Volver al inicio",("Arial", 30),"black","tomato3")
     return carteles
