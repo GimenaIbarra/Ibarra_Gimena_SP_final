@@ -42,13 +42,13 @@ def boton_pistas(ventana: pg.Surface, fuente :tuple, color:str|tuple, color_fond
         list: Lista de botones
     """    
     lista = []
-    lista_path = [r"images\continente.webp",r"images\letras.jpg",r"images\comida.webp"]
+    lista_path = [r"images\comodin_letra.png",r"images\comodin_categoria.png",r"images\comodin_mezclado.png"]
     lista_acciones = [pista_continente,generar_letra_random,pista_comida]
     WINDOW_SIZE = ventana.get_size()
     posicion_y = 80
     indice = 0
     for elemento in pistas:
-        boton = crear_boton(ventana, (WINDOW_SIZE[0] - 180, posicion_y), (180, 100), "", fuente, color, color_fondo,imagen=lista_path[indice])
+        boton = crear_boton(ventana, (WINDOW_SIZE[0] - 180, posicion_y), (100, 100), "", fuente, color, color_fondo,imagen=lista_path[indice])
         boton["usos"] = pistas[elemento]
         boton["accion"] = lista_acciones[indice]
         indice += 1

@@ -192,14 +192,18 @@ def manejar_ayuda(diccionario_partida:dict,ventana:pg.surface,carteles:dict,fuen
         carteles["explicacion"] = crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"", fuentes["fuente_palabras"], "black", (164, 187, 254))
         dibujar_boton(carteles["explicacion"])
         explicacion = """
-        Bienvenido a Palabrini, el juego donde debes adivinar las palabras de los paises.
-        Para jugar debes seleccionar una dificultad y adivinar las palabras.
+        Bienvenido a Adivina la palabra:
+
+        Para comenzar a jugar debes seleccionar una dificultad y adivinar las palabras.
         Tenes 6 intentos para adivinar la palabra, si fallas pierdes un intento.
         Si adivinas la palabra ganas puntos.
-        Tenes 3 comodines que te ayudaran a adivinar la palabra.
-        Descubrir continente, te dice el continente al que pertenece la palabra.
-        Descubrir letras, te muestra una letra de la palabra en la posicion correcta.
-        Descubrir comida, te muestra una comida tipica del pais.
+        
+        Tenes 3 comodines que te ayudaran a adivinar la palabra:
+        - Descubrir una letra: se develará una letra de la palabra aleatoria en su posicion
+        correcta
+        - Descubrir categoria: se develará a qué categoría pertenece la palabra
+        - Palabra mezclada: se develará la palabra con sus letras mezcladas.
+        
         El juego termina si adivinas 5 o fallas 3 palabras.
         Si lo haces antes de 15 minutos ganas 100 puntos extras."""
         dibujar_lineas(ventana, explicacion, 25, SIZE_WINDOW[1] / 2 - 200, fuentes["fuente_palabras"], "black")
