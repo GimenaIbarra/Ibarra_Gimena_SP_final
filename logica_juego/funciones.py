@@ -83,7 +83,7 @@ def generar_matriz(palabra_obtenida: dict, intentos:int) -> list:
 
 
 def modificar_puntuacion_nuevo(diccionario_ronda: dict,
-                               lista_puntuacion: list) -> int:
+                                lista_puntuacion: list) -> int:
     """Modifica la puntuacion del jugador en la ronda actual
 
     Args:
@@ -104,7 +104,7 @@ def modificar_puntuacion_nuevo(diccionario_ronda: dict,
                     puntuacion -= lista_puntuacion[i][2] * intentos
     return puntuacion
 
-      # generar_letra_random(diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]], diccionario_rondas["lista_matrices"][diccionario_rondas["indice_actual"]], diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]], diccionario_rondas["sets_acertados"])
+        # generar_letra_random(diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]], diccionario_rondas["lista_matrices"][diccionario_rondas["indice_actual"]], diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]], diccionario_rondas["sets_acertados"])
 def generar_letra_random(ventana:pg.Surface, diccionario_rondas:dict, fuente:tuple) -> None:  
     """Genera una letra random en la matriz
 
@@ -134,7 +134,7 @@ def recuperar_letras_no_acertadas(palabra: dict, indices_acertados: set) -> list
         list: Letras no acertadas de la palabra
     """
     letras_no_acertadas = []
-    for i in range(len(palabra["pais"])):
+    for i in range(len(palabra["palabra"])):
         if validar_indice_en_lista(i, indices_acertados):
             letras_no_acertadas.append(i)
             print(letras_no_acertadas)
@@ -180,7 +180,7 @@ def activar_sonido(diccionario_partida:dict, carteles:dict):
     """Activa el sonido
 
     Args:
-        diccionario_partida (dict): Diccioanrio con los datos de la partida
+        diccionario_partida (dict): Diccionario con los datos de la partida
         carteles (dict): Diccionario con los carteles
     """    
     diccionario_partida["sonido"] = True

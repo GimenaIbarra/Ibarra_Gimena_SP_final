@@ -37,7 +37,7 @@ def comprobar_estado_juego(diccionario_partida:dict, diccionario_ronda:dict, ven
         ventana (pg.surface): Ventana de pygame
         entrada (dict): Diccionario con la entrada del usuario
         palabras (dict): Diccionario con las palabras
-        DIFICUTYS (list): Lista de dificultades
+        DIFICULTYS (list): Lista de dificultades
         carteles (dict): Diccionario con los carteles
         lista_boton_pistas (list): Lista de botones de pistas
         fuentes (dict): Fuentes de pygame
@@ -106,7 +106,7 @@ def dibujar_botones_main(ventana:pg.surface, diccionario_ronda:dict,lista_boton_
     mostrar_matriz_p(ventana, diccionario_ronda["lista_matrices"][diccionario_ronda["indice_actual"]], fuentes["fuente_matriz"], "Black", "White", diccionario_ronda["lista_palabras"][diccionario_ronda["indice_actual"]])  
     for boton in lista_boton_pistas:
         dibujar_boton(boton)
-        pg.draw.rect(ventana, "navy", boton["rectangulo"], 2)  
+        #pg.draw.rect(ventana, "navy", boton["rectangulo"], 2)  
     pg.draw.rect(ventana, "aquamarine4", boton_modos[diccionario_ronda["indice_actual"]]["rectangulo"], 2)
     dibujar_input(entrada)
     
@@ -197,7 +197,7 @@ def manejar_ayuda(diccionario_partida:dict,ventana:pg.surface,carteles:dict,fuen
         Para comenzar a jugar debes seleccionar una dificultad y adivinar las palabras.
         Tenes 6 intentos para adivinar la palabra, si fallas pierdes un intento.
         Si adivinas la palabra ganas puntos.
-        
+
         Tenes 3 comodines que te ayudaran a adivinar la palabra:
         - Descubrir una letra: se develará una letra de la palabra aleatoria en su posicion
         correcta

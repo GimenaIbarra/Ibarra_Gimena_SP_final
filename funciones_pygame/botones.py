@@ -170,7 +170,7 @@ def pista_continente(ventana:pg.surface, diccionario_rondas:dict, fuente:tuple):
         diccionario_rondas (dict): Diccionario de las rondas
         fuente (tuple): Fuente de pygame
     """    
-    pista = crear_boton(ventana, (200, 100), (400, 400), diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["continente"], fuente, "black", "salmon")
+    pista = crear_boton(ventana, (200, 100), (400, 400), diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["categoria"], fuente, "black", "salmon")
     dibujar_boton(pista)
     pg.display.update()
     pg.time.wait(5000)

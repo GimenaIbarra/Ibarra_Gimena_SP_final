@@ -39,10 +39,10 @@ def normalizar_en_diccionario(palabras: list) -> list[dict]:
 
     for palabra in palabras:
         diccionario_temporal = {}
-        diccionario_temporal["pais"] = palabra[0]
-        diccionario_temporal["continente"] = palabra[2]
+        diccionario_temporal["palabra"] = palabra[0]
         diccionario_temporal["caracteres"] = int(palabra[1])
-        diccionario_temporal["comida"] = palabra[3]
+        diccionario_temporal["categoria"] = palabra[2]
+        diccionario_temporal["mezclada"] = palabra[3]
         diccionario.append(diccionario_temporal)
 
     return diccionario
@@ -97,7 +97,7 @@ def comprobar_si_existe_archivo(path: str) -> list:
 
 
 def calcular_valores_a_guardar(tiempo_rondas: list, contador_victorias: int, lista_puntuacion: list,
-                               lista_botones: list, tiempo_total: list, diccionario_partidas: dict) -> int:
+                                lista_botones: list, tiempo_total: list, diccionario_partidas: dict) -> int:
     """Funcion que se encarga de calcular los valores a guardar en el archivo .JSON
 
     Args:
