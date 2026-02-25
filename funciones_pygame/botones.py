@@ -22,7 +22,7 @@ def crear_lista_botones_dificultad(ventana: pg.Surface,fuente:list, color:str|tu
     posicion_botones_x = ventana_size[0] / 2 - 225
     posicion_botones_y = 0
     for i in range(len(dificultades)):
-        boton = crear_boton(ventana, (posicion_botones_x, posicion_botones_y), (150, 50), f"{dificultades[i]} caracteres", fuente, color, color_fondo)
+        boton = crear_boton(ventana, (posicion_botones_x, posicion_botones_y), (150, 50), f"{dificultades[i]} letras", fuente, color, color_fondo)
         boton["dificultad"] = dificultades[i]
         boton_modos.append(boton)
         posicion_botones_x += 150
@@ -204,7 +204,7 @@ def crear_carteles (ventana:pg.surface,SIZE_WINDOW:tuple,fuentes:tuple) -> dict:
     carteles["Activar_Sonido"] = crear_boton(ventana,(400, 100),(50,50),"",None,"black","black",imagen= r"images\sonido_on.png", accion= activar_sonido)
     carteles["Desactivar_Sonido"] = crear_boton(ventana,(400, 100),(50,50),"",None,"black","black",imagen= r"images\sonido_off.png", accion=desactivar_sonido)
     carteles["Desactivar_Sonido"]["Presionado"] = True
-    carteles["cartel_usuario"]= crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"Ingrese su nombre de usuario",("Arial", 40),"black",(164, 187, 254))
+    carteles["cartel_usuario"]= crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"Ingrese su nombre de usuario",("Arial", 40),"black",(157, 237, 225))
     carteles["jugar_otra_vez"] = crear_boton(ventana,(SIZE_WINDOW[0] / 2 - 150,0),(300,100),"Jugar otra vez",("Arial", 30),"black","salmon")
-    carteles["boton_volver"] = crear_boton(ventana,(SIZE_WINDOW[0] - 200 - 150,SIZE_WINDOW[1] - 100),(350,80),"Volver al inicio",("Arial", 30),"black","tomato3")
+    carteles["boton_volver"] = crear_boton(ventana,(SIZE_WINDOW[0] - 200 - 150,SIZE_WINDOW[1] - 100),(350,80),"Volver al inicio",("Arial", 30),"black",(107,219,211))
     return carteles

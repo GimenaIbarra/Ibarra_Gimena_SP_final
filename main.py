@@ -17,7 +17,7 @@ def main():
     palabras = obtener_lista_palabras("words.csv")
     diccionario_partida = crear_diccionario_partida(ventana)
     diccionario_ronda = crear_diccionario_ronda(DIFICULTYS, palabras, TRYS)
-    boton_modos = crear_lista_botones_dificultad(ventana, fuentes["fuente_palabras"], "Black","salmon", DIFICULTYS)
+    boton_modos = crear_lista_botones_dificultad(ventana, fuentes["fuente_palabras"], "Black",(188,245,237), DIFICULTYS)
     carteles = crear_carteles(ventana,SIZE_WINDOW,fuentes)
     lista_boton_pistas = boton_pistas(ventana, fuentes["fuente_pistas"], "black", "aquamarine4", CLUES)
     entrada = crear_text_box(ventana, fuentes["fuente_matriz"], "chartreuse3", "grey36", (SIZE_WINDOW[0]/2 - 75, SIZE_WINDOW[1] - 50), (150, 50))

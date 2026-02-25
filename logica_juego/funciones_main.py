@@ -13,13 +13,13 @@ def actualizar_interfaz(ventana:pg.surface, diccionario_partida:dict, diccionari
         fuentes (dict): Fuentes de pygame
     """    
     tiempo_actual = time.time() - diccionario_ronda["tiempo_inicio"]
-    ventana.fill((164, 187, 254))
+    ventana.fill((255, 255, 255))
     high_score = crear_boton(ventana,(10,ventana.get_height()-100),(70,70),"", fuentes["fuente_palabras"], "black", (164, 187, 254), imagen= r"images\high-score.png")
-    high_score_variables = crear_boton(ventana,(70,ventana.get_height()-100),(150,50), f"{diccionario_partida["mayor_puntaje"]} {diccionario_partida["mayor_nombre"]}", fuentes["fuente_palabras"], "black", (164, 187, 254))
+    high_score_variables = crear_boton(ventana,(70,ventana.get_height()-100),(150,50), f"{diccionario_partida["mayor_puntaje"]} {diccionario_partida["mayor_nombre"]}", fuentes["fuente_palabras"], "black", (255, 255, 255))
     icono_puntuacion = crear_boton(ventana, (10, 10), (50, 50), "", fuentes["fuente_palabras"], "white", (164, 187, 254), imagen=r"images\puntuacion-mas-alta.png")
     icono_tiempo = crear_boton(ventana, (10, 70), (50, 50), "", fuentes["fuente_palabras"], "white", "grey40", imagen=r"images\cronometro.png")
-    tiempo_actualizado = crear_boton(ventana, (60, 70), (100, 50), f"{tiempo_actual:.2f}", fuentes["fuente_palabras"], "black", (164, 187, 254))
-    puntuaje_actualizado = crear_boton(ventana, (70, 10), (50, 50), f"{sumar_lista(diccionario_partida['puntaje'])}", fuentes["fuente_palabras"], "black", (164, 187, 254))
+    tiempo_actualizado = crear_boton(ventana, (60, 70), (100, 50), f"{tiempo_actual:.2f}", fuentes["fuente_palabras"], "black", (255, 255, 255))
+    puntuaje_actualizado = crear_boton(ventana, (70, 10), (50, 50), f"{sumar_lista(diccionario_partida['puntaje'])}", fuentes["fuente_palabras"], "black", (255, 255, 255))
     dibujar_boton(icono_puntuacion)
     dibujar_boton(icono_tiempo)
     dibujar_boton(puntuaje_actualizado)
@@ -167,8 +167,8 @@ def manejar_inicio (diccionario_partida:dict,ventana:pg.surface,carteles:dict,fu
     """    
     if diccionario_partida["estado_juego"] == "pantalla_inicio":
         dibujar_boton(carteles["pantalla_inicio"])
-        carteles["boton_jugar"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 -150,SIZE_WINDOW[1]/2 + 60),(150, 50), "Jugar", fuentes["fuente_palabras"], "black", "salmon")
-        carteles["boton_ayuda"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 + 50,SIZE_WINDOW[1]/2 + 60),(150, 50), "Ayuda", fuentes["fuente_palabras"], "black", "salmon")
+        carteles["boton_jugar"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 -150,SIZE_WINDOW[1]/2 + 60),(150, 50), "Jugar", fuentes["fuente_palabras"], "black", (188,245,237))
+        carteles["boton_ayuda"] = crear_boton(ventana,(SIZE_WINDOW[0]/2 + 50,SIZE_WINDOW[1]/2 + 60),(150, 50), "Ayuda", fuentes["fuente_palabras"], "black", (188,245,237))
         dibujar_boton(carteles["boton_jugar"]) 
         dibujar_boton(carteles["boton_ayuda"])
         if carteles["Activar_Sonido"]["Presionado"]:
@@ -192,17 +192,16 @@ def manejar_ayuda(diccionario_partida:dict,ventana:pg.surface,carteles:dict,fuen
         carteles["explicacion"] = crear_boton(ventana,(0,0),(SIZE_WINDOW[0],SIZE_WINDOW[1]),"", fuentes["fuente_palabras"], "black", (164, 187, 254))
         dibujar_boton(carteles["explicacion"])
         explicacion = """
-        Bienvenido a Adivina la palabra:
+        ¡Bienvenido a Adivina la palabra!
 
-        Para comenzar a jugar debes seleccionar una dificultad y adivinar las palabras.
-        Tenes 6 intentos para adivinar la palabra, si fallas pierdes un intento.
-        Si adivinas la palabra ganas puntos.
+        Elegí una dificultad y poné a prueba tu ingenio.
+        Tenes 6 intentos para descubrir la palabra oculta.
+        Cada error te cuesta un intento… pero cada acierto suma puntos.
 
-        Tenes 3 comodines que te ayudaran a adivinar la palabra:
-        - Descubrir una letra: se develará una letra de la palabra aleatoria en su posicion
-        correcta
-        - Descubrir categoria: se develará a qué categoría pertenece la palabra
-        - Palabra mezclada: se develará la palabra con sus letras mezcladas.
+        Tenes 3 comodines que te ayudarán a adivinar la palabra:
+        - Descubrir una letra: devela una letra aleatoria en su posición correcta
+        - Descubrir categoria: devela a qué categoría pertenece la palabra
+        - Palabra mezclada: devela la palabra con sus letras mezcladas.
         
         El juego termina si adivinas 5 o fallas 3 palabras.
         Si lo haces antes de 15 minutos ganas 100 puntos extras."""
