@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "abril",
+        "partidas_jugadas": [
+            5,
+            0
+        ],
+        "contador_victorias": 5,
+        "tiempo_promedio": 26.59037192662557,
+        "puntaje_total": 200
+    },
+    {
+        "nombre": "lucas",
+        "partidas_jugadas": [
+            5,
+            0
+        ],
+        "contador_victorias": 5,
+        "tiempo_promedio": 5.9483122030893965,
+        "puntaje_total": 350
+    },
+    {
+        "nombre": "mateo",
+        "partidas_jugadas": [
+            5,
+            1
+        ],
+        "contador_victorias": 5,
+        "tiempo_promedio": 10.166121585028511,
+        "puntaje_total": 500
+    }
+]

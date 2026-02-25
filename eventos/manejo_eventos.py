@@ -224,7 +224,7 @@ def manejar_reiniciar_juego(carteles: pg.Surface, diccionario_partida:dict, even
         diccionario_partida["puntaje"] = [0]
         diccionario_rondas["tiempo_inicio"] = time.time()
         diccionario_partida["mayor_puntaje"],diccionario_partida["mayor_nombre"] = recuperar_puntuacion_mas_alta("puntuaciones.json")
-        lista_path = [r"images\continente.webp",r"images\letras.jpg",r"images\comida.webp"]
+        lista_path = [r"images\comodin_letra.png",r"images\comodin_categoria.png",r"images\comodin_mezclado.png"]
         
         
         for boton in lista_botones_pistas:

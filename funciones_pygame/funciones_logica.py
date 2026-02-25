@@ -52,8 +52,8 @@ def verificar_palabra_p(palabra_ingresada: str, palabra_obtenida: dict, matriz: 
         set: Set de indices acertados
     """    
     set_acertados = set()
-    for i in range(len(palabra_obtenida["pais"])):
-        if palabra_ingresada[i] == palabra_obtenida["pais"][i]:
+    for i in range(len(palabra_obtenida["palabra"])):
+        if palabra_ingresada[i] == palabra_obtenida["palabra"][i]:
             matriz[intentos][i] =  palabra_ingresada[i] 
             set_acertados.add(i)
         else:
@@ -76,9 +76,9 @@ def mostrar_matriz_p(ventana: pg.Surface, matriz:list, fuente:tuple, color:str|t
     x, y = ventana_size[0] / 2 - 150, 100
     for i in range(len(matriz)):
         for j in range(len(matriz[0])):
-            if matriz[i][j] == palabra["pais"][j]:
+            if matriz[i][j] == palabra["palabra"][j]:
                 boton = crear_boton(ventana, (x, y), (boton_ancho, boton_alto), matriz[i][j], fuente, color, "green", False)
-            elif matriz[i][j] in palabra["pais"]:
+            elif matriz[i][j] in palabra["palabra"]:
                 boton = crear_boton(ventana, (x, y), (boton_ancho, boton_alto), matriz[i][j], fuente, color, "yellow", False)
             elif matriz[i][j] == "_":
                 boton = crear_boton(ventana, (x, y), (boton_ancho, boton_alto), matriz[i][j], fuente, color, color_fondo, False)
@@ -140,11 +140,11 @@ def verificar_gano(diccionario_partidas:dict,diccionario_rondas:dict,entrada:dic
         bool: Bandera que indica si el jugador gano
     """    
     cartel_gano = crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),"",("Arial", 30),"goldenrod1","mediumturquoise", imagen= r"images\gano.png")
-    if diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["pais"] == entrada["Texto"]:
+    if diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["palabra"] == entrada["Texto"]:
         diccionario_partidas["cantidad_palabras_acertadas"][0] += 1
         bandera = True
-        cartel_pais =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"Acertaste el pais era {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['pais']}",("Arial", 40),"black",(164, 187, 254))
-        dibujar_boton(cartel_pais)
+        cartel_palabra =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"Acertaste el pais era {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['palabra']}",("Arial", 40),"black",(164, 187, 254))
+        dibujar_boton(cartel_palabra)
         pg.display.update()
         pg.time.wait(2000)
         dibujar_boton(cartel_gano)
@@ -167,11 +167,11 @@ def verificar_perdio (diccionario_rondas:dict,diccionario_partidas:dict,ventana:
         bool: Bandera que indica si el jugador perdio
     """    
     cartel_perdio = crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),"",("Arial", 30),"Red3", "seashell4",imagen=r"images\perdio.webp")
-    if diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]] == 6 and diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["pais"] != entrada["Texto"]:
+    if diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]] == 6 and diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["palabra"] != entrada["Texto"]:
         diccionario_partidas["cantidad_palabras_falladas"][0] += 1
         bandera = True
-        cartel_pais =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"Fallaste perro era {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['pais']}",("Arial", 40),"black",(164, 187, 254))
-        dibujar_boton(cartel_pais)
+        cartel_palabra =crear_boton(diccionario_partidas["ventana"],(0,0),(ventana[0],ventana[1]),f"Fallaste perro era {diccionario_rondas['lista_palabras'][diccionario_rondas['indice_actual']]['palabra']}",("Arial", 40),"black",(164, 187, 254))
+        dibujar_boton(cartel_palabra)
         pg.display.update()
         pg.time.wait(2000)
         dibujar_boton(cartel_perdio)

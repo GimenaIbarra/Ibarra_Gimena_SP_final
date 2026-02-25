@@ -95,7 +95,7 @@ def modificar_puntuacion_nuevo(diccionario_ronda: dict,
     """    
 
     puntuacion = 0
-    if len(diccionario_ronda["sets_acertados"]) == len(diccionario_ronda["lista_palabras"][diccionario_ronda["indice_actual"]]["pais"]):
+    if len(diccionario_ronda["sets_acertados"]) == len(diccionario_ronda["lista_palabras"][diccionario_ronda["indice_actual"]]["palabra"]):
         intentos = diccionario_ronda["lista_intentos"][diccionario_ronda["indice_actual"]] - 1
         for i in range(len(lista_puntuacion)):
             if diccionario_ronda["lista_palabras"][diccionario_ronda["indice_actual"]]["caracteres"] == lista_puntuacion[i][0]:
@@ -118,7 +118,7 @@ def generar_letra_random(ventana:pg.Surface, diccionario_rondas:dict, fuente:tup
     while validacion:
         letra_random = random.choice(letras_sin_acertar)
         if verificar_que_la_letra_no_se_haya_adivinado(letra_random, diccionario_rondas["lista_matrices"][diccionario_rondas["indice_actual"]],diccionario_rondas["sets_acertados"]):
-            diccionario_rondas["lista_matrices"][diccionario_rondas["indice_actual"]][diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]]][letra_random] = diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["pais"][letra_random] 
+            diccionario_rondas["lista_matrices"][diccionario_rondas["indice_actual"]][diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]]][letra_random] = diccionario_rondas["lista_palabras"][diccionario_rondas["indice_actual"]]["palabra"][letra_random] 
             diccionario_rondas["lista_intentos"][diccionario_rondas["indice_actual"]], diccionario_rondas["sets_acertados"].add(letra_random)
             validacion = False
 
